@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "back-end for valentina AI",
   "main": "server.js",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  }
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon server.js"
