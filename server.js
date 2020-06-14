@@ -12,6 +12,7 @@ const profile = require('./controllers/profile.js');
 const image = require('./controllers/image.js');
 
 //Database Connection
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 const db = knex({
     client: 'pg',
     connection: {
