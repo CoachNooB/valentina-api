@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //Back End Point
-app.get('/', (req, res) => { res.send(database.users) })
+app.get('/', (req, res) => { res.send('It is Working') })
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt) })
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db) }) 
@@ -36,6 +36,8 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) })
 
 //Backend Port
-app.listen(3001, () => {
-    console.log('App is running on port 3001');
+const listenPort = process.env.PORT;
+
+app.listen(listenPort, () => {
+    console.log(`App is running on port ${listenPort}`);
 })
